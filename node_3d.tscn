@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://pdsjtdro4hx5"]
+
+[ext_resource type="Script" path="res://Summoner.gd" id="1_1f2kt"]
+
+[sub_resource type="Environment" id="Environment_32wt4"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_gxepg"]
+auto_exposure_enabled = true
+frustum_focal_length = 15.05
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcoj5"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Summoner" type="Node3D" parent="."]
+script = ExtResource("1_1f2kt")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.27504)
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+environment = SubResource("Environment_32wt4")
+attributes = SubResource("CameraAttributesPhysical_gxepg")
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_vcoj5")
